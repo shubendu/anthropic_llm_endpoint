@@ -5,8 +5,12 @@ app = Flask(__name__)
 
 # Initialize the anthropic client
 client = anthropic.Anthropic(
-    api_key="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"
+    api_key="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"
     )
+
+@app.route('/',methods=['GET'])
+def check_status():
+    return jsonify({'response': "working"})
 
 @app.route('/generate_response', methods=['POST'])
 def generate_response():
